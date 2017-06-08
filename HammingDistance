@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int hammingDistance(int x, int y) {
+     
+     int res=0;
+     int sol = x^y;
+     while(sol)
+     {
+         res++;
+         sol=sol&(sol-1);
+     }
+     return res;
+   
+    }
+    
+    
+};
