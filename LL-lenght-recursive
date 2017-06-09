@@ -1,0 +1,11 @@
+ int lamb(node *temp)
+    {
+        if(temp->next==NULL)
+            return 1;
+        int t = 1 + lamb(temp->next);
+        return t;
+    }
+    int sudo()
+    {
+        return lamb(head);
+    }
