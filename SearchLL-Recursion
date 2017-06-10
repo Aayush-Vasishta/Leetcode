@@ -1,0 +1,23 @@
+ int doit(node *temp,int n)
+    {
+      if(temp->data==n)
+       {
+
+       return 1;
+       // cout<<temp->data;
+
+       }
+       else if(temp->next==NULL&&temp->data!=n)
+       {
+           return 0;
+       }
+
+      int t = doit(temp->next,n);
+      return t;
+
+    }
+    int search(int d)
+    {
+        return doit(head,d);
+
+    }
