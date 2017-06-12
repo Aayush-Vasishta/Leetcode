@@ -1,0 +1,11 @@
+void revprint(node *temp)
+{
+
+    if(temp==NULL)
+    {
+        return ;
+    }
+
+    revprint(temp->next);
+    cout<<temp->data;
+}
