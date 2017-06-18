@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int n = 8;
+    int a[] = {5,4,7,8,9,2,1,11};
+
+    for(int i = 0 ; i < n ;i++ )
+    {
+
+        int j = i+1;
+        int min=j;
+
+       while(j<n)
+       {
+           if(a[j]<a[min])
+            min=j;
+            j++;
+
+       }
+       if(a[min]<a[i]){
+       int t = a[i];
+       a[i] = a[min];
+       a[min] = t;
+       }
+
+
+    }
+
+    for(int i=0;i<n;i++)
+        cout<<a[i]<<" ";
+}
