@@ -1,0 +1,12 @@
+TreeNode * FindMax(TreeNode*root)
+{
+
+    if(root->right==NULL)
+    {
+        return root;
+    }
+    else
+    {
+        return FindMax(root->right);
+    }
+}
