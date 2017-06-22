@@ -1,0 +1,25 @@
+TreeNode* fetch(TreeNode*root,int d)
+{
+    if(root->data==d)
+    {
+
+        return root;
+    }
+    if(root==NULL)
+    {
+
+        return NULL;
+    }
+
+    else if(d<root->data)
+    {
+
+        return fetch(root->left,d);
+    }
+    else if(d>root->data)
+    {
+
+        return fetch(root->right,d);
+    }
+
+}
