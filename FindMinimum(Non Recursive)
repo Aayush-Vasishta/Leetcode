@@ -1,0 +1,14 @@
+void FindMin(TreeNode*root)
+{ while(root!=NULL)
+{
+    if(root->left==NULL)
+    {
+        cout<<"Minimum is "<<root->data;
+        root=root->left;
+    }
+    else
+    {
+        root=root->left;
+    }
+}
+}
