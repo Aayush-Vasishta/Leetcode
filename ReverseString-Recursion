@@ -1,0 +1,37 @@
+//
+//  main.cpp
+//  string
+//
+//  Created by ahuja on 25/06/2017.
+//  Copyright © 2017 ahuja. All rights reserved.
+//
+#include <iostream>
+#include <string.h>
+using namespace std;
+void Reverse(char str[],int l)
+{
+    if(l==0)
+    {
+        cout<<str[l];
+        return ;
+    }
+    
+    cout<<str[l];
+    l--;
+    Reverse(str,l);
+}
+
+
+int main() {
+    char str[200];
+    cin>>str;
+    int l=0;
+    for(int i=0;str[i]!='\0';i++)
+        l++;
+    l=l-1;
+    Reverse(str,l);
+    
+    
+    
+    
+}
