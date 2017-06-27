@@ -1,0 +1,53 @@
+#include <iostream>
+#include <string.h>
+#include<string>
+#include<vector>
+using namespace std;
+void Reverse(char str[],int l)
+{
+    if(l==0)
+    {
+        cout<<str[l];
+        return ;
+    }
+    
+    cout<<str[l];
+    l--;
+    Reverse(str,l);
+}
+
+void Rank(string s,string x)
+{
+    vector<string> a;
+    int cnt=0;
+    sort(s.begin(),s.end());
+    a.push_back(s);
+    
+    while(next_permutation(s.begin(),s.end()))
+          {
+              a.push_back(s);
+          }
+         // int cnt=0;
+    for(vector<string>::const_iterator i = a.begin(); i != a.end(); ++i)
+    {
+        if(*i!=x){
+            cnt++;
+        }
+        else {
+            break;
+        }
+    }          cnt=cnt+1;
+    cout<<cnt;
+}
+
+int main() {
+    string s;
+    cin>>s;
+    string x;
+    x=s;
+    Rank(s,x);
+    
+    
+}
+
+    
