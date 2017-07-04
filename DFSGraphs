@@ -1,0 +1,101 @@
+#include<bits/stdc++.h>
+#include<queue>
+using namespace std;
+int check(int visit[],int n)
+{
+
+    int flag=0;
+    for(int i=0;i<n;i++)
+        {
+            if(visit[i]==0)
+                flag=1;
+        }
+
+        if(flag==1)
+        {
+            return 0;
+        }
+        else
+            return 1;
+}
+int main()
+{
+    int n;
+    //cout<<" Enter Number of node \n";
+    cin>>n;
+
+    int a[n][n]={{0,1,0,0,1},{1,0,1,1,1},{0,1,0,1,0},{0,1,1,0,1},{1,1,0,1,0}};
+
+
+
+    int visit[n]={0};
+
+    stack<int> s;
+    int i=0;
+
+    s.push(i);
+    cout<<i;
+    visit[i]=1;
+   while(!s.empty())
+    {
+   for(int j=0;j<n;j++)
+   {
+       if(a[s.top()][j]==1&&visit[j]!=1)
+       {
+           s.push(j);
+           cout<<j;
+           visit[j]=1;
+
+       }
+
+       int flag=0;
+       int cnt1=0,cnt2=0;
+       for(int k=0;k<n;k++)
+       {
+
+           if(a[s.top()][k]==1&&visit[k]==1)
+           {
+               cnt1++;
+           }
+       }
+        for(int k=0;k<n;k++)
+       {
+
+           if(a[s.top()][k]==1)
+           {
+               cnt2++;
+           }
+       }
+
+       if(cnt1==cnt2)
+       {
+           flag=1;
+       }
+
+       if(flag==1)
+       {
+            s.pop();
+       }
+
+
+   }
+
+   }
+
+
+
+/*
+for(int k=1;k<=n;k++)
+    cout<<visit[k];
+
+     for(int i=0;i<n;i++)
+    {
+
+        for(int j=0;j<n;j++)
+        {
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+*/
+}
