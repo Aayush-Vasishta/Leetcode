@@ -1,0 +1,72 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+int check(char a,char b)
+{
+    int x,y;
+    
+    if(a=='*'||a=='/')
+        x=2;
+    else if(a=='+'||a=='-')
+        x=1;
+    
+    if(b=='*'||b=='/')
+        y=2;
+    else if(b=='+'||b=='-')
+        y=1;
+    
+    if(x>y)
+        return 0;
+    else
+        return 1;
+
+}
+
+int main()
+{
+    char s[100];
+    cin>>s;
+    stack<char> st;
+    for(int i=0;s[i]!='\0';i++)
+    {
+         if(s[i]>='a'&&s[i]<='z')
+         {
+             cout<<s[i];
+         }
+        else if(s[i]=='+'||s[i]=='-'||s[i]=='*'||s[i]=='-')
+        {
+            if(st.empty())
+            {
+                st.push(s[i]);
+            }
+           else if(check(st.top(),s[i]))
+            {
+                while(check(st.top(),s[i])!=0)
+                {
+                    cout<<st.top();
+                    st.pop();
+                    if(st.empty())
+                        break;
+                }
+                st.push(s[i]);
+            }
+            else
+            {
+                st.push(s[i]);
+            }
+            
+        }
+        
+        
+        
+    }
+    
+    while(!st.empty())
+    {
+        cout<<st.top();
+        st.pop();
+    }
+
+}
