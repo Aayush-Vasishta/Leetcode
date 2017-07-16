@@ -1,0 +1,36 @@
+bool isPalindrome(Node *head)
+{
+    //Your code here
+    
+    struct Node *t=head;
+    
+    char s[1000];
+    int i=0;
+    while(t!=NULL)
+    {
+        s[i]=t->data;
+        i++;
+        t=t->next;
+    }
+    s[i]='\0';
+    int cnt=0,j,k;
+    for(j=0,k=i-1;j<i/2;j++,k--)
+        {
+            if(s[j]==s[k])
+            {
+                cnt++;
+            }
+            else if(s[j]!=s[k])
+            {
+                break;
+            }
+        }   
+        
+        if(cnt==i/2)
+        {
+            return 1;
+        }
+        else
+        return 0;
+        
+}
