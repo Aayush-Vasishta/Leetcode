@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //cout << "Hello World!" << endl;
+    int n;
+    cin>>n;
+    int t=n;
+    int sum[100]={-1};
+    int i=0;
+    while(t>0)
+    {
+       sum[i]=t%2;
+       t=t/2;
+       i++;
+       
+    }
+    int k=0;
+    while(k!=i)
+    {cout<<sum[k];
+    k++;}
+    int flag=0;
+    for(int j=0,l=i;j<l;j++,l--)
+    {
+        if(sum[j]!=sum[l])
+            {
+                flag=1;
+                break;
+            }
+    }
+    
+    if(flag)
+    cout<<"NPT";
+    return 0;
+}
